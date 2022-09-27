@@ -7,6 +7,10 @@ eventListeners()
 
 function eventListeners() {
   form.addEventListener('submit', addMovie)
+  document.addEventListener('DOMContentLoaded', function () {
+    let movies = Storage.getMoviesFromStorage()
+    UI.loadAllMovies(movies)
+  })
 }
 function addMovie(e) {
   const title = titleElement.value

@@ -25,4 +25,17 @@ class UI {
       div.remove()
     }, 1500)
   }
+  static loadAllMovies(movies) {
+    const movieList = document.querySelector('#movies')
+    movies.forEach((movie) => {
+      movieList.innerHTML += `
+      <tr>
+          <td><img style="width: 20rem" src="${movie.url}" class="img-fluid img-thumbnail"></td>
+          <td>${movie.title}</td>
+          <td>${movie.director}</td>
+          <td><a href="#" id = "delete-movie" class = "btn btn-danger">Delete Movie</a></td>
+      </tr>
+      `
+    })
+  }
 }
