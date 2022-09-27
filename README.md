@@ -3,7 +3,6 @@
   # This is a Movie Project 
 
 </div>
--------
 
 
 ![ss1](/img/ss1.png "ss1")
