@@ -13,4 +13,13 @@ class Storage {
     }
     return movies
   }
+  static deleteMovieFromStorage(movieTitle) {
+    let movies = this.getMoviesFromStorage()
+    movies.forEach((movie, index) => {
+      if (movie.title === movieTitle) {
+        movies.splice(index, 1)
+      }
+    })
+    localStorage.setItem('movies', JSON.stringify(movies))
+  }
 }

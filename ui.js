@@ -38,4 +38,7 @@ class UI {
       `
     })
   }
+  static deleteMoviesFromUI(x) {
+    x.parentElement.parentElement.remove()
+  }
 }
