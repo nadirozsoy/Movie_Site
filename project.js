@@ -15,9 +15,11 @@ function addMovie(e) {
 
   if (title === '' || director === '' || url === '') {
     //Alert Message
+    UI.displayMessages('Please do not leave the fields blank!', 'danger')
   } else {
     const newMovie = new Movie(title, director, url)
     UI.addMovieToUI(newMovie)
+    UI.displayMessages('Movie successfully added!', 'success')
   }
   UI.clearInputs(titleElement, directorElement, urlElement)
   e.preventDefault()
