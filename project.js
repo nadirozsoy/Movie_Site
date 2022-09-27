@@ -3,6 +3,7 @@ const titleElement = document.querySelector('#title')
 const directorElement = document.querySelector('#director')
 const urlElement = document.querySelector('#url')
 const cardBody = document.getElementsByClassName('card-body')[1]
+const clear = document.getElementById('clear-movies')
 
 eventListeners()
 
@@ -13,6 +14,7 @@ function eventListeners() {
     UI.loadAllMovies(movies)
   })
   cardBody.addEventListener('click', deleteMovie)
+  clear.addEventListener('click', clearAllMovies)
 }
 function addMovie(a) {
   const title = titleElement.value
@@ -41,5 +43,11 @@ function deleteMovie(b) {
           .textContent
       )
     }
+  }
+}
+function clearAllMovies() {
+  if (confirm('Are you sure you want to delete them all?')) {
+    UI.clearAllMoviesFromUI()
+    Storage.clearAllMoviesFromStorage()
   }
 }

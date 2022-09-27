@@ -41,4 +41,10 @@ class UI {
   static deleteMoviesFromUI(x) {
     x.parentElement.parentElement.remove()
   }
+  static clearAllMoviesFromUI() {
+    const movieList = document.querySelector('#movies')
+    while (movieList.firstElementChild !== null) {
+      movieList.firstElementChild.remove()
+    }
+  }
 }
