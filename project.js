@@ -20,6 +20,7 @@ function addMovie(e) {
     const newMovie = new Movie(title, director, url)
     UI.addMovieToUI(newMovie)
     UI.displayMessages('Movie successfully added!', 'success')
+    Storage.addMovieToStorage(newMovie)
   }
   UI.clearInputs(titleElement, directorElement, urlElement)
   e.preventDefault()
